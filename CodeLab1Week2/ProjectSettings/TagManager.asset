@@ -7,6 +7,9 @@ TagManager:
   - Prize
   - Player2
   - ScoreText
+  - Canvas
+  - Cube1Timer
+  - CubeTimer
   layers:
   - Default
   - TransparentFX

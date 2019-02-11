@@ -13,6 +13,7 @@ public class GameOverManager : MonoBehaviour
 
 	private Animator anim;
 
+	public GameObject levelTimer;
 	public float restartTimer;
 	public float restartDelay = 8;
 	
@@ -26,7 +27,7 @@ public class GameOverManager : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		if (LevelManager.TimeLeft <= 0) //if the timer runs out
+		if (LevelManager.timeLeft <= 0) //if the timer runs out
 		{
 			GameOver(); //game over
 		}
@@ -34,6 +35,7 @@ public class GameOverManager : MonoBehaviour
 
 	public void GameOver()
 	{
+		Destroy(levelTimer);
 		anim.SetTrigger("GameOver"); //start Game Over animation
 		restartTimer += Time.deltaTime; //count up in seconds
 		if (restartTimer >= restartDelay) //if restart timer is equal to our restart delay
